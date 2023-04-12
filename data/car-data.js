@@ -1,3 +1,4 @@
+//this can be deleted -- now using models
 const cars = [
   {make: 'Audi', model: 'R8', coupe: true, _id: 123456},
   {make: 'BMW', model: '8 Series', coupe: true, _id: 345678},
