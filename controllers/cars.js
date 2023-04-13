@@ -44,9 +44,24 @@ function show(req, res) {
   })
 }
 
+function deleteCar(req, res) {
+  Car.findByIdAndDelete(req.params.carId)
+  .then(car => {
+    res.redirect('/cars')
+  })
+  .catch(error => {
+    console.log(error)
+    res.redirect('/cars')
+  })
+}
+
+
+
 export {
   index,
   newCar as new,
   create,
   show,
+  deleteCar as delete,
+
 }

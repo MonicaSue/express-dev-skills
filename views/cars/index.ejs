@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/stylesheets/style.css">
   <title>Cars</title>
 </head>
 <body>
@@ -11,9 +12,14 @@
   <ul>
     <% cars.forEach(car => { %>
       <li>
-        <a href="/cars/<%= car._id %>"><%= car.make %></a>
-        -
-        <%= car.model %>
+        <form 
+          action="/cars/<%= car._id %>?_method=DELETE"
+          class="delete-form"
+          method="POST"
+        >
+          <button type="submit">X</button>
+      </form>
+        <a href="/cars/<%= car._id %>"><%= car.make %> - <%= car.model %></a>
         : 
         <%= car.detailed ? 'Clean' : 'Run through wash' %>
       </li>
